@@ -1,0 +1,319 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>de.etherapists</groupId>
+	<artifactId>beapplicant</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>beapplicant</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<compiler.source.version>1.7</compiler.source.version>
+		<compiler.target.version>1.7</compiler.target.version>
+		<maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+		<maven.checkstyle.plugin.version>2.17</maven.checkstyle.plugin.version>
+		<checkstyle.config.location>/checkstyle/ehealth_checks.xml</checkstyle.config.location>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework.version>4.2.2.RELEASE</org.springframework.version>
+		<junit.version>4.12</junit.version>
+		<mockito.version>1.10.19</mockito.version>
+		<hibernate.version>4.3.10.Final</hibernate.version>
+		<mysql.connector.version>5.1.38</mysql.connector.version>
+		<commons.dbcp.version>2.1.1</commons.dbcp.version>
+		<maven.plugin.tomcat.version>2.2</maven.plugin.tomcat.version>
+		<gson.version>2.1.10</gson.version>
+		<slf4j.version>1.7.15</slf4j.version>
+		<ehcache.version>1.2.0</ehcache.version>
+		<javaee-web.version>7.0</javaee-web.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<jsefa.version>0.9.3.RELEASE</jsefa.version>
+		<!-- fallback if no profile is selected -->
+		<appserver.home>http://dev-etherapists:8080</appserver.home>
+		<skipTests>true</skipTests>
+		<jstl.version>1.2</jstl.version>
+		<maven.surefire.version>2.19.1</maven.surefire.version>
+		<guava.version>19.0</guava.version>
+		<spring.profiles.active>int</spring.profiles.active>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Mocking framework -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${mockito.version}</version>
+		</dependency>
+
+
+		<!-- DB related dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>${commons.dbcp.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+
+
+		<!-- Spring framework -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.ehcache-spring-annotations</groupId>
+			<artifactId>ehcache-spring-annotations</artifactId>
+			<version>${ehcache.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-web-api</artifactId>
+			<version>${javaee-web.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Various Application Context utilities, including EhCache, JavaMail, 
+			Quartz, and Freemarker integration Define this if you need any of these integrations -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.immutables</groupId>
+			<artifactId>gson</artifactId>
+			<version>${gson.version}</version>
+		</dependency>
+		<!-- Logging abstract for log4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+
+		<!-- apache commons io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>${commons-fileupload.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsefa</groupId>
+			<artifactId>jsefa</artifactId>
+			<version>${jsefa.version}</version>
+		</dependency>
+
+
+
+
+	</dependencies>
+
+	<profiles>
+
+		<!-- local development enviroment -->
+		<profile>
+			<id>appserverConfig-dev</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+			</activation>
+			<properties>
+				<springprofile>dev</springprofile>
+				<skipTests>true</skipTests>
+				<appserver.home>http://dev-etherapists:8080</appserver.home>
+			</properties>
+
+		</profile>
+		<!-- local development test -->
+		<profile>
+			<id>appserverConfig-test</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>test</value>
+				</property>
+			</activation>
+			<properties>
+				<springprofile>test</springprofile>
+				<skipTests>false</skipTests>
+				<appserver.home>http://dev-etherapists:8080</appserver.home>
+			</properties>
+
+		</profile>
+
+		<!-- code check and junit tests with differnt database -->
+		<profile>
+			<id>appserverConfig-check</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>check</value>
+				</property>
+			</activation>
+			<properties>
+				<springprofile>int-test</springprofile>
+				<appserver.home>http://192.168.189.10:9000</appserver.home>
+				<skipTests>false</skipTests>
+			</properties>
+		</profile>
+
+		<!-- profile to build and deploy on Integration enviroment -->
+		<profile>
+			<id>appserverConfig-int</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>int</value>
+				</property>
+			</activation>
+			<properties>
+				<springprofile>int</springprofile>
+				<appserver.home>http://192.168.189.10:9000</appserver.home>
+				<skipTests>true</skipTests>
+			</properties>
+		</profile>
+
+	</profiles>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>${maven.checkstyle.plugin.version}</version>
+				<configuration>
+					<excludes>de/etherapists.ehealth.test/**</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>${maven.plugin.tomcat.version}</version>
+				<configuration>
+					<url>${appserver.home}/manager/text</url>
+					<server>TomcatServer</server>
+					<path>/applicant</path>
+					<update>true</update>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${compiler.source.version}</source>
+					<target>${compiler.target.version}</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+					<systemPropertyVariables>
+						<spring.profiles.active>${springprofile}</spring.profiles.active>
+					</systemPropertyVariables>
+					<skipTests>${skipTests}</skipTests>
+					<skipSurefireReport>${skipTests}</skipSurefireReport>
+					<reportsDirectories />
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+</project>
