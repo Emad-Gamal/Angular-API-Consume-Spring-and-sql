@@ -36,7 +36,7 @@ public class EhealthFilter implements javax.servlet.Filter {
 
         lock.lock();
         // create session
-        // logger.info("check session...");
+        // logg er.info("check session...");
 
         try {
             chain.doFilter(request, response);
