@@ -62,7 +62,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://dev-etherapists:3306/beapplicant" />
 		<property name="username" value="beapplicant" />
-		<property name="password" value="1234" />
+		<property name="password" value="applicantbe16" />
 	</bean>
 
 </beans>
