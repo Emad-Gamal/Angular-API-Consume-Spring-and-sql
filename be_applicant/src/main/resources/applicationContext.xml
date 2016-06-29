@@ -31,13 +31,4 @@
 		<import resource="test-config-context.xml" />
 	</beans>
 
-	<!-- integration -->
-	<beans profile="int">
-		<import resource="int-config-context.xml" />
-	</beans>
-
-	<!-- integration with tests (testdatabase -->
-	<beans profile="int-test">
-		<import resource="int-test-config-context.xml" />
-	</beans>
 </beans>
