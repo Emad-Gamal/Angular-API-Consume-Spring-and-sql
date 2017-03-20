@@ -11,7 +11,7 @@
         http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-4.2.xsd
-        http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring/ehcache-spring-1.1.xsd">
+        http://ehcache-spring-annotations.googlecode.com/svn/schema/ehcache-spring http://storage1.humanoo.com/ehcache-spring-1.1.xsd">
 
 	<tx:annotation-driven />
 
