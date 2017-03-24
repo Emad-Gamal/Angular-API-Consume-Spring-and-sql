@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import de.etherapists.beapplicant.dao.TeamDAO;
-import de.etherapists.beapplicant.restService.Team;
+import de.etherapists.beapplicant.model.Team;
 
 @Service
 @org.springframework.transaction.annotation.Transactional

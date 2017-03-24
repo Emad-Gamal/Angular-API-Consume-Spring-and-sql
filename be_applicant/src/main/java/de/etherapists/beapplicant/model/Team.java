@@ -1,4 +1,4 @@
-package de.etherapists.beapplicant.restService;
+package de.etherapists.beapplicant.model;
 
 import java.io.Serializable;
 

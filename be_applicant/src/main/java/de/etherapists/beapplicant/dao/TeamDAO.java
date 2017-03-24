@@ -2,7 +2,7 @@ package de.etherapists.beapplicant.dao;
 
 import java.util.List;
 
-import de.etherapists.beapplicant.restService.Team;
+import de.etherapists.beapplicant.model.Team;
 
 @SuppressWarnings("PMD.UnusedModifier")
 public interface TeamDAO {

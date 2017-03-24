@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import de.etherapists.beapplicant.restService.Team;
+import de.etherapists.beapplicant.model.Team;
 import  de.etherapists.util.BasicDAO;
 
 @Repository
