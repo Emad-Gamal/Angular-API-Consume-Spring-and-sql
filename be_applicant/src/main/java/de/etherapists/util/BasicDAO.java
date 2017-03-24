@@ -1,4 +1,4 @@
-package util;
+package  de.etherapists.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

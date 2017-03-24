@@ -1,7 +1,7 @@
 /**
  *
  */
-package util.adapter;
+package  de.etherapists.util.adapter;
 
 import java.lang.reflect.Type;
 

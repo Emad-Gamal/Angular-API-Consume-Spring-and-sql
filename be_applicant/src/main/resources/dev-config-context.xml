@@ -15,12 +15,12 @@
 
 	<tx:annotation-driven />
 
-	<context:component-scan base-package="de.etherapists.*"/>
+	<context:component-scan base-package="de.etherapists"/>
 
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="de.etherapists.*" />
+		<property name="packagesToScan" value="de.etherapists" />
 		<property name="hibernateProperties">
 			<props>			
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

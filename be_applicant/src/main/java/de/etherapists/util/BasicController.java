@@ -1,4 +1,4 @@
-package util;
+package  de.etherapists.util;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -17,9 +17,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSerializer;
 
-import util.adapter.CollectionAdapter;
-import util.adapter.EnumAdapter;
-import util.adapter.StackTraceElementArrayAdapter;
+import  de.etherapists.util.adapter.CollectionAdapter;
+import  de.etherapists.util.adapter.EnumAdapter;
+import  de.etherapists.util.adapter.StackTraceElementArrayAdapter;
 
 @Controller
 public class BasicController {

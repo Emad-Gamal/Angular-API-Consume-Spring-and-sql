@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import util.BasicController;
+import de.etherapists.beapplicant.service.TeamService;
+import de.etherapists.util.BasicController;
+
 
 @Controller
 @RequestMapping(value = "/app")
@@ -23,6 +25,10 @@ public class AppController extends BasicController {
 
     @Autowired
     private HttpServletResponse response;
+    
+    @Autowired
+    private TeamService teamService;
+    
 
     @ResponseBody
     @RequestMapping(value = "/test", method = RequestMethod.GET)

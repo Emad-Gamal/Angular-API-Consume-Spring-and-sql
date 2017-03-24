@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import de.etherapists.beapplicant.restService.Team;
-import util.BasicDAO;
+import  de.etherapists.util.BasicDAO;
 
 @Repository
 public class TeamDAOImpl extends BasicDAO implements TeamDAO {
