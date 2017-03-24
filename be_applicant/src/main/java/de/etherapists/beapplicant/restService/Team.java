@@ -1,39 +1,70 @@
 package de.etherapists.beapplicant.restService;
 
-public class Team {
+import java.io.Serializable;
 
-    private Integer id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    private String name;
+@Entity
+@Table(name = "teams")
+public class Team implements Serializable {
 
-    /**
-     * @return the id
-     */
-    public Integer getId() {
-        return id;
-    }
+	private static final long serialVersionUID = -1796464375896060609L;
 
-    /**
-     * @param id
-     *            the id to set
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	@Id
+	@GeneratedValue
+	private Integer id;
 
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
+	private String name;
 
-    /**
-     * @param name
-     *            the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+	private Integer rating;
 
+	/**
+	 * @return the id
+	 */
+	public Integer getId() {
+		return id;
+	}
+
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name
+	 *            the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the rating
+	 */
+	public Integer getRating() {
+		return rating;
+	}
+
+	/**
+	 * @param rating
+	 *            the rating to set
+	 */
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
+
+	
 }
