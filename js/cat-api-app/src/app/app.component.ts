@@ -12,8 +12,6 @@ import { CatApiService } from './cat-api-service.service'
 export class AppComponent implements OnInit{
 
   cats:Cat[] = [];
-  cat;
-  title;
   page:number = 1;
 
   constructor(private catApiService: CatApiService) { }
@@ -26,13 +24,11 @@ export class AppComponent implements OnInit{
 
   // To get image data from api
   getCats() {
-    console.log(this.page);
     this.catApiService.getApiCats(this.page).subscribe((res) => this.onSuccess(res));
   }
 
   // When we got data on a success
   onSuccess(res) {
-    console.log(res);
     if (res != undefined) {
       res.forEach(item => {
         this.cats.push(new Cat(item));
@@ -43,7 +39,6 @@ export class AppComponent implements OnInit{
   // When scroll down the screen
   onScroll()
   {
-    console.log("Scrolled");
     this.page = this.page + 1;
     this.getCats();
   }

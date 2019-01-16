@@ -10,6 +10,6 @@ export class CatApiService {
 
   getApiCats(page: number)
   {
-    return this.http.get('https://api.thecatapi.com/v1/images/search?limit=5&order=Desc&page='+page);
+    return this.http.get('https://api.thecatapi.com/v1/images/search?limit=24&order=Desc&page='+page);
   }
 }

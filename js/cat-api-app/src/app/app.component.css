@@ -1,3 +1,27 @@
-th  {
+/* th {
   text-align: center;
+} */
+
+.foo {
+  height: 400px;
+  overflow: auto;
+  text-align: center;
+  width: 100%;
+  font-size: 12pt;
+}
+
+.grid-header{
+    text-align: center;
+    background-color: #f0f0f0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin:20px;
+    padding: 20px;
+    width: 95%;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.cat-row{
+  margin:10px;
 }
