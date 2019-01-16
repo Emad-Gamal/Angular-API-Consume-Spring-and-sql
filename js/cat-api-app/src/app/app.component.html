@@ -1,4 +1,5 @@
 
+
 <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="50%">
   <thead>
     <tr>
@@ -8,16 +9,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cat of cats">
-      <td>{{cat.id}}</td>
-      <!-- <td> </td> -->
-      <!-- <td *ngIf="cat.categories ">{{cat.categories[0].name }}</td> -->
-      <td *ngIf="cat.hasOwnProperty('categories'); else categoryNotFound ">
-         <p *ngFor="let category of cat.categories">{{category.name}} </p>
-      </td>
-      <td>{{cat.url}}</td>
-    </tr>
+    <!-- <div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"  [scrollWindow]="false"
+      style="height: 400px; overflow-y: scroll;"> -->
+      <tr *ngFor="let cat of cats">
+        <td>{{cat.id}}</td>
+        <td *ngIf="cat.hasOwnProperty('categories'); else categoryNotFound ">
+           <p *ngFor="let category of cat.categories">{{category.name}} </p>
+        </td>
+        <td><img style="height: 50px;width:50px;" src="{{cat.url}}" /></td>
+      </tr>
+    <!-- </div> -->
   </tbody>
 </table>
+
 
 <ng-template #categoryNotFound> <td></td></ng-template>
