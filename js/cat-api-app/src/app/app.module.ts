@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+
+import {ScrollDispatchModule } from '@angular/cdk/scrolling';
+
 
 @NgModule({
   declarations: [
@@ -9,6 +14,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

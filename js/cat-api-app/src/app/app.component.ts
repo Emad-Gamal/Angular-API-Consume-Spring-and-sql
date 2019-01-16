@@ -1,67 +1,50 @@
 import { Component, OnInit  } from '@angular/core';
+import {  Cat } from './cat';
+import { CatApiService } from './cat-api-service.service'
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [CatApiService]
 })
 export class AppComponent implements OnInit{
 
-  cats;
+  cats:Cat[] = [];
   cat;
   title;
+  page:number = 1;
+
+  constructor(private catApiService: CatApiService) { }
+
 
   ngOnInit() {
-
-    this.cats=[{
-        "breeds": [],
-        "categories": [
-          {
-          "id": 2,
-          "name": "space"
-          }
-        ],
-        "id": "4v",
-        "url": "https://cdn2.thecatapi.com/images/4v.jpg"
-      }];
-
-    this.cats.push({
-    "breeds": [],
-    "categories": [
-    {
-    "id": 2,
-    "name": "space"
-    }
-    ],
-    "id": "4v",
-    "url": "https://cdn2.thecatapi.com/images/4v.jpg"
-    }
-    ,
-    {
-    "breeds": [],
-    "id": "20f",
-    "url": "https://cdn2.thecatapi.com/images/20f.png"
-    },
-    {
-    "id": "4bv",
-    "url": "https://cdn2.thecatapi.com/images/4bv.gif"
-  }
-)
-
-    this.cat = {
-      "breeds": [],
-      "categories": [
-        {
-        "id": 2,
-        "name": "space"
-        }
-      ],
-      "id": "4v",
-      "url": "https://cdn2.thecatapi.com/images/4v.jpg"
-    }
-
-    this.title = 'cat-api-app';
+    // To call api for initial image rendering
+    this.getCats();
   }
 
+  // To get image data from api
+  getCats() {
+    console.log(this.page);
+    this.catApiService.getApiCats(this.page).subscribe((res) => this.onSuccess(res));
+  }
 
+  // When we got data on a success
+  onSuccess(res) {
+    console.log(res);
+    if (res != undefined) {
+      res.forEach(item => {
+        this.cats.push(new Cat(item));
+      });
+    }
+  }
+
+  // When scroll down the screen
+  onScroll()
+  {
+    console.log("Scrolled");
+    this.page = this.page + 1;
+    this.getCats();
+  }
 }

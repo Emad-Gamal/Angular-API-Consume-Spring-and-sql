@@ -4,19 +4,19 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Category Name</th>
+      <th>Category</th>
       <th>Image</th>
     </tr>
   </thead>
   <tbody>
-    <!-- <div class="row" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"  [scrollWindow]="false"
+    <!-- <div class="row"  [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"  [scrollWindow]="false"
       style="height: 400px; overflow-y: scroll;"> -->
       <tr *ngFor="let cat of cats">
         <td>{{cat.id}}</td>
         <td *ngIf="cat.hasOwnProperty('categories'); else categoryNotFound ">
            <p *ngFor="let category of cat.categories">{{category.name}} </p>
         </td>
-        <td><img style="height: 50px;width:50px;" src="{{cat.url}}" /></td>
+        <td><img style="height: 150px;width:150px;" src="{{cat.url}}" /></td>
       </tr>
     <!-- </div> -->
   </tbody>
