@@ -7,7 +7,7 @@ export class Cat implements Cat{
   categories?:Category[];
   breeds?: string[];
 
-  constructor(item?: Cat) {
+  constructor(item: Cat) {
         if (item != undefined) {
             for (let key in item) {
                 try { this[key] = item[key]; }

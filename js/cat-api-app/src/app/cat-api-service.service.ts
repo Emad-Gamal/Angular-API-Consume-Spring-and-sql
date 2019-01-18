@@ -8,8 +8,7 @@ export class CatApiService {
 
   constructor(private http: HttpClient) { }
 
-  getApiCats(page: number)
-  {
+  getApiCats(page: number){
     return this.http.get('https://api.thecatapi.com/v1/images/search?limit=24&order=Desc&page='+page);
   }
 }

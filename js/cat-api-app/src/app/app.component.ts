@@ -26,7 +26,6 @@ export class AppComponent implements OnInit{
   getCats() {
     this.catApiService.getApiCats(this.page).subscribe((res) => this.onSuccess(res));
   }
-
   // When we got data on a success
   onSuccess(res) {
     if (res != undefined) {
@@ -35,11 +34,10 @@ export class AppComponent implements OnInit{
       });
     }
   }
-
   // When scroll down the screen
-  onScroll()
-  {
+  onScroll(){
     this.page = this.page + 1;
     this.getCats();
   }
+
 }
