@@ -1,0 +1,12 @@
+de\etherapists\role\Role.class
+de\etherapists\user\UserController.class
+de\etherapists\role\RoleDao.class
+de\etherapists\InitRoles.class
+de\etherapists\role\RoleService.class
+de\etherapists\user\User.class
+de\etherapists\utils\ResourceNotFoundException.class
+de\etherapists\Application.class
+de\etherapists\user\UserService.class
+de\etherapists\utils\ServiceResult.class
+de\etherapists\user\UserDao.class
+de\etherapists\role\RoleController.class
