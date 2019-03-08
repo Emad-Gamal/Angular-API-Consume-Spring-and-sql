@@ -9,6 +9,6 @@ Note:
 
 To change database configuration check file 
 
-humanoo_j_eval\target\classes\application.properties
+target\classes\application.properties
 
 To create database change 
